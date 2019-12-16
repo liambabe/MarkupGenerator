@@ -4,4 +4,4 @@ from FileGenerator import FileGenerator
 templateParser = TemplateParser()
 fileGenerator = FileGenerator()
 
-print("test")
+print(templateParser.parse("basicHtml"))
