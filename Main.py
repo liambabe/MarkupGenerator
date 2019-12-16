@@ -5,3 +5,4 @@ templateParser = TemplateParser()
 fileGenerator = FileGenerator()
 
 print(templateParser.parse("basicHtml"))
+print(templateParser.getFileList())
