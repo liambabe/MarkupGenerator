@@ -23,5 +23,7 @@ class TemplateParser:
     #return list of all templates avaliable
     def getFileList(self) -> List[str]:
         (_, _, filenames) = next(walk(self.templateFolder))
+
+        filenames = [file.split('.')[0] for file in filenames]
         
         return filenames
