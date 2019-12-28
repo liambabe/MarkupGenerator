@@ -4,14 +4,15 @@ from FileGenerator import FileGenerator
 
 arguments = len(sys.argv) - 1
 
-if arguments != 1:
+if arguments != 2:
     print("Invalid Arguements")
     exit()
 
 userInput = sys.argv[1]
+fileName = sys.argv[2]
 
 templateParser = TemplateParser()
-fileGenerator = FileGenerator()
+fileGenerator = FileGenerator(fileName)
 templateList = templateParser.getFileList()
 
 def printList():
@@ -23,9 +24,9 @@ def printHelp():
 
 print(userInput)
 
-if userInput == "list":
+if userInput == "li" or userInput == "list":
     printList()
-elif userInput == "help":
-    pass
-elif userInput == "close":
+elif userInput == "h" or userInput == "help":
+    printHelp()
+else:
     pass

@@ -13,7 +13,7 @@ class TemplateParser:
         self.fileExtension = ".csv"
 
     #parse csv template into list of strings
-    def parse(self, fileName) -> List[str]:
+    def parse(self, fileName: str) -> List[str]:
         self.templatePath = self.templateFolder + fileName + self.fileExtension
         file = open(self.templatePath, "r")
         self.tags = file.read().split(",")
