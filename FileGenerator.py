@@ -11,4 +11,13 @@ class FileGenerator:
         self.fileDirectory = os.getcwd()
 
     def generateFile(self, tags: List[str]):
-        pass
+        filePath = os.path.join(self.fileDirectory, self.fileName)
+
+        with open(filePath, "w") as fileWriter:
+            for tag in tags:
+                line = "<" + tag + ">" + "\n"
+                fileWriter.write(line)
+
+            for tag in reversed(tags):
+                line = "</" + tag + ">" + "\n"
+                fileWriter.write(line)
