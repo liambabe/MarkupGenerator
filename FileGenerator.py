@@ -15,9 +15,9 @@ class FileGenerator:
 
         with open(filePath, "w") as fileWriter:
             for tag in tags:
-                line = "<" + tag + ">" + "\n"
+                line = "<" + tag.rstrip() + ">" + "\n"
                 fileWriter.write(line)
 
             for tag in reversed(tags):
-                line = "</" + tag + ">" + "\n"
+                line = "</" + tag.rstrip() + ">" + "\n"
                 fileWriter.write(line)
